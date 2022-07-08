@@ -11,7 +11,9 @@ const App = () => {
   if (!address) {
     return (
       <div className="landing">
-        <h1>Welcome to The ExpanseDAO</h1>
+        <h1>
+          <p>Explore sHips for journey into tHe universe</p>
+        </h1>
         <button onClick={connectWithMetamask} className="btn-hero">
           Connect your wallet
         </button>
@@ -23,7 +25,9 @@ const App = () => {
   // which means they've connected their wallet to our site!
   return (
     <div className="landing">
-      <h1>👀 wallet connected, now what!</h1>
+      <h1>
+        <p>👀 wallet connecteD, now wHat!</p>
+      </h1>
     </div>
   );
 };

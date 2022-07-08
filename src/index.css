@@ -1,10 +1,20 @@
+@font-face {
+  font-family: "Protomolecule";
+  src: url("/public/assets/fonts/Protomolecule.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: "Protomolecule", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #7700ee;
+  background-image: url("/public/assets/expanse.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   overflow-x: hidden;
 }
@@ -56,7 +66,21 @@ h1 {
   display: flex;
   text-align: center;
 }
-
+.landing h1 p {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: #fff;
+  font-weight: 400;
+  transform: translate(0, 8rem);
+}
+.landing button {
+  transform: translate(0, 4rem);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(88, 80, 68, 1) 100%
+  );
+}
 .member-page > div {
   display: flex;
   flex-direction: row;
@@ -119,16 +143,16 @@ button {
   background-color: #000;
   color: #fff;
   border: none;
-  font-weight: bold;
   font-family: inherit;
   padding: 1.2rem 2rem;
-  text-transform: uppercase;
   border-radius: 3rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 400;
 }
 
 button:hover {
-  background-color: #121212;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 31%, rgb(90, 63, 63) 100%);
 }
 
 button:focus {
