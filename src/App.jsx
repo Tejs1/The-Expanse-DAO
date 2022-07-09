@@ -70,6 +70,17 @@ const App = () => {
       </div>
     );
   }
+  // Showing DAO page if user's Addresss has NFT
+  if (hasClaimedNFT) {
+    return (
+      <div className="member-page landing">
+        <h1>
+          <p>🍪DAO MEMBER PAGE</p>
+          <p>Congratulations on being a mEmBer</p>
+        </h1>
+      </div>
+    );
+  }
 
   // Render mint nft screen.
   return (
