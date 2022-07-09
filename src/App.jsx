@@ -146,13 +146,34 @@ const App = () => {
     );
   }
   // Showing DAO page if user's Addresss has NFT
+  // only DAO members will see this. Render all the members + token amounts.
   if (hasClaimedNFT) {
     return (
-      <div className="member-page landing">
-        <h1>
-          <p>🍪DAO MEMBER PAGE</p>
-          <p>Congratulations on being a mEmBer</p>
-        </h1>
+      <div className="member-page">
+        <h1 className="member-page-heading">🍪DAO Member Page</h1>
+        <p>Congratulations on being a MEMBEr</p>
+
+        <div className="member-list">
+          <h2>MEMBER List</h2>
+          <table className="card">
+            <thead>
+              <tr>
+                <th>ADDRESS</th>
+                <th>TOKEN AMOUNT</th>
+              </tr>
+            </thead>
+            <tbody className="wrapper">
+              {memberList.map((member) => {
+                return (
+                  <tr key={member.address}>
+                    <td>{shortenAddress(member.address).toUpperCase()}</td>
+                    <td>{member.tokenAmount}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
