@@ -160,7 +160,7 @@ button:disabled {
   justify-content: center;
 }
 #root .member-page main section form {
-  text-align: left;
+  text-align: center;
 }
 #root .member-page main section form .card div {
   display: flex;
@@ -178,10 +178,9 @@ button:disabled {
   padding: 1rem;
 }
 .card .radio-div {
-  width: 25vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .submit-btn {
   display: flex;

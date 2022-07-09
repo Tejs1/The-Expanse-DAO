@@ -11,10 +11,8 @@ const activeChainId = ChainId.Rinkeby;
 
 // Wrap your app with the thirdweb provider
 ReactDOM.render(
-  <React.StrictMode>
-    <ThirdwebProvider desiredChainId={activeChainId}>
-      <App />
-    </ThirdwebProvider>
-  </React.StrictMode>,
+  <ThirdwebProvider desiredChainId={activeChainId}>
+    <App />
+  </ThirdwebProvider>,
   document.getElementById("root")
 );
