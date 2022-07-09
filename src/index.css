@@ -9,18 +9,16 @@ html,
 body {
   margin: 0;
   font-family: "Protomolecule", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url("/public/assets/expanse.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #fff;
+  background-color: #000;
   overflow-x: hidden;
+  z-index: -100;
 }
 #root {
   min-height: 100vh;
   display: flex;
+  background: none;
+  z-index: -50;
 }
 
 h1 {
@@ -56,6 +54,7 @@ h1 {
 .connect-wallet,
 .mint-nft,
 .member-page {
+  z-index: 20;
   flex-direction: column;
   width: 960px;
   max-width: calc(100% - 1rem);
@@ -84,7 +83,11 @@ h1 {
 
 button {
   cursor: pointer;
-  background-color: #000;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(88, 80, 68, 1) 100%
+  );
   color: #fff;
   border: none;
   font-family: inherit;
@@ -107,22 +110,29 @@ button:disabled {
   opacity: 0.8;
   pointer-events: none;
 }
-.member-page {
+#root .member-page {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(/public/assets/expanse.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% -400px;
+  z-index: 200;
 }
 .member-page .member-page-heading {
   font-size: 2.5rem;
   letter-spacing: 3px;
   font-weight: 400;
-  margin-top: 25rem;
   padding: 0;
 }
 .member-page p {
   padding: 0;
   margin: 0;
+  margin-bottom: 1rem;
 }
 .member-page h2 {
   font-size: 2rem;
@@ -131,19 +141,54 @@ button:disabled {
   padding: 0;
   margin: 0.5rem;
 }
+#root .member-page main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#root .member-page main section {
+  width: 50vw;
+}
+#root .member-page main section table {
+  margin: auto;
+  padding: 0;
+}
 .member-page .member-page-heading .member-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
+#root .member-page main section form {
+  text-align: left;
+}
+#root .member-page main section form .card div {
+  display: flex;
+  flex-direction: row;
+}
 .member-list .card thead tr {
   width: 20rem;
-  margin: auto;
 }
 
 .member-list .card thead th {
   padding: 0.5rem;
+}
+.card {
   margin: auto;
+  padding: 1rem;
+}
+.card .radio-div {
+  width: 25vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.submit-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn small {
+  padding-top: 1rem;
 }
