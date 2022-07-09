@@ -34,7 +34,7 @@ const token = sdk.getToken("0x5ECdbd0fc6472eE147406b06d16ee222B0a20337");
     await token.transfer(vote.getAddress(), percent80);
 
     console.log(
-      "✅ Successfully transferred " + percent90 + " tokens to vote contract"
+      "✅ Successfully transferred " + percent80 + " tokens to vote contract"
     );
   } catch (err) {
     console.error("failed to transfer tokens to vote contract", err);
