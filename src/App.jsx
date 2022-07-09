@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="landing">
       <h1>
-        <p>👀 wallet connecteD, now wHat!</p>
+        <p>👀 wallet connecteD, now wHat! </p>
       </h1>
     </div>
   );
