@@ -13,6 +13,9 @@ const App = () => {
   // State variable for us to know if user has our NFT.
   const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
 
+  // isClaiming lets us easily keep a loading state while the NFT is minting.
+  const [isClaiming, setIsClaiming] = useState(false);
+
   useEffect(() => {
     // If they don't have a connected wallet, exit!
     if (!address) {
@@ -37,6 +40,22 @@ const App = () => {
     checkBalance();
   }, [address, editionDrop]);
 
+  const mintNft = async () => {
+    try {
+      setIsClaiming(true);
+      await editionDrop.claim("0", 1);
+      console.log(
+        `🌊 Successfully Minted! Check it out on OpenSea: https://testnets.opensea.io/assets/${editionDrop.getAddress()}/0`
+      );
+      setHasClaimedNFT(true);
+    } catch (error) {
+      setHasClaimedNFT(false);
+      console.error("Failed to mint NFT", error);
+    } finally {
+      setIsClaiming(false);
+    }
+  };
+
   // This is the case where the user hasn't connected their wallet
   // to your web app. Let them call connectWallet.
   if (!address) {
@@ -52,13 +71,15 @@ const App = () => {
     );
   }
 
-  // This is the case where we have the user's address
-  // which means they've connected their wallet to our site!
+  // Render mint nft screen.
   return (
-    <div className="landing">
+    <div className="mint-nft landing">
       <h1>
-        <p>👀 wallet connecteD, now wHat! </p>
+        <p>Mint your FREE 🍪DAO MEmBersHip NFT</p>
       </h1>
+      <button disabled={isClaiming} onClick={mintNft}>
+        {isClaiming ? "Minting..." : "Mint your nft (FREE)"}
+      </button>
     </div>
   );
 };
