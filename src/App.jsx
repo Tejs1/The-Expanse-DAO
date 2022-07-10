@@ -1,11 +1,12 @@
-import { useState, useEffect, useMemo } from "react";
 import {
   useAddress,
   useMetamask,
   useEditionDrop,
   useToken,
   useVote,
+  useNetwork,
 } from "@thirdweb-dev/react";
+import { ChainId } from "@thirdweb-dev/sdk";
 import { AddressZero } from "@ethersproject/constants";
 
 const App = () => {
